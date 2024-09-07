@@ -1,0 +1,6 @@
+local state - состояние компонента, меняется через useState и useReducer
+
+cross-component state - меняется через props между компонентами, 
+перебрасываются функции или состояние
+
+app-wide state (состояние всего приложения) - например redux, или React Context, др. библиотеки
