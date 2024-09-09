@@ -5,3 +5,17 @@
 если состояние нужно только конкретному компоненту, и 
 используется только им, то имеет смысл использовать useState
 рядом с Redux
+
+So the objects which we return in the reducer will not, and that's super important will not be merged with the existing state.
+They will overwrite the existing state.
+
+You should never super important never mutate the state, the existing state.
+
+// error (mutate the existing state)
+if (action.type === 'increment){
+state.counter++;
+  return {
+    counter: state.counter,
+    showCounter: state.showCounter
+  };
+}
