@@ -1,10 +1,18 @@
 const redux = require('redux');
 
 // это типа то где происходят изменения
-const counterReducer = (state = {counter: 0}, action) => {
-  return {
-    counter: state.counter + 1
+const counterReducer = (state = { counter: 0 }, action) => {
+  if (action.type === 'increment') {
+    return {
+      counter: state.counter + 1
+    }
   }
+  if (action.type === 'decrement') {
+    return {
+      counter: state.counter - 1
+    }
+  }
+  return state;
 }
 
 // сам state
@@ -21,4 +29,5 @@ const counterSubscriber = () => {
 store.subscribe(counterSubscriber);
 
 // это как-бы действие
-store.dispatch({type: 'increment'});
+store.dispatch({ type: 'increment' });
+store.dispatch({ type: 'decrement' });
