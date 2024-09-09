@@ -1,0 +1,17 @@
+{
+  "name": "10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "redux-demo.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^5.0.1"
+  }
+}
