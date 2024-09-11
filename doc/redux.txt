@@ -19,3 +19,23 @@ state.counter++;
     showCounter: state.showCounter
   };
 }
+
+// =========================
+Действие (Action) - это просто объект в котором есть type и payload, или просто type
+const incrementAction = {
+  type: 'INCREMENT',
+  payload: 1 // Дополнительные данные
+};
+
+dispatch -  это метод, который отправляет действие в хранилище.
+dispatch(incrementAction);
+
+Редюсер (Reducer) -  это чистая функция, которая получает текущее состояние и действие, а затем возвращает новое состояние
+const counterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + action.payload;
+    default:
+      return state;
+  }
+};
